@@ -1,6 +1,6 @@
 # gra Pong
 
-Projekt gry Arkanoid wykonany w ramach zaliczenia przedniotu Kreatywne programowanie dla każdego.
+Projekt gry Arkanoid wykonany w ramach zaliczenia przedmiotu Kreatywne programowanie dla każdego.
 
 Treść zadania\
 W środowisku Processing utwórz grę typu Pong
