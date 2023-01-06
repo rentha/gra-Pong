@@ -4,36 +4,36 @@ int ballX = 250; // położenie piłki poziomo
 int ballY = 250; // położenie piłki pionowo
 int ballVelocityX = 3; // prędkość piłki poziomo
 int ballVelocityY = 3; // prędkość piłki pionowo
-int player1Score = 0; // wynik gracza 1
-int player2Score = 0; // wynik gracza 2
+int player1Score = 0; 
+int player2Score = 0; 
 
 void setup() {
-  size(500, 500); // rozmiar okna
+  size(500, 500);
 }
 
 void draw() {
-  background(0); // kolor tła
-  fill(255); // kolor rysowania
-  rect(10, player1Y, 10, 50); // rysowanie paletki gracza 1
-  rect(480, player2Y, 10, 50); // rysowanie paletki gracza 2
-  ellipse(ballX, ballY, 20, 20); // rysowanie piłki
-  textSize(32); // rozmiar tekstu
-  text(player1Score, 100, 50); // rysowanie wyniku gracza 1
-  text(player2Score, 400, 50); // rysowanie wyniku gracza 2
+  background(0); 
+  fill(255); 
+  rect(10, player1Y, 10, 50); 
+  rect(480, player2Y, 10, 50);
+  ellipse(ballX, ballY, 20, 20); 
+  textSize(32); 
+  text(player1Score, 100, 50); 
+  text(player2Score, 400, 50); 
   
   // poruszanie się paletek graczy
-  if (keyPressed) { // jeżeli jakiś klawisz jest wciśnięty
-    if (key == 'w') { // jeżeli to klawisz "w"
-      player1Y -= 5; // przesuń paletkę gracza 1 w górę
+  if (keyPressed) { 
+    if (key == 'w') {
+      player1Y -= 5; 
     }
-    if (key == 's') { // jeżeli to klawisz "s"
-      player1Y += 5; // przesuń paletkę gracza 1 w dół
+    if (key == 's') { 
+      player1Y += 5; 
     }
-    if (keyCode == UP) { // jeżeli to strzałka w górę
-      player2Y -= 5; // przesuń paletkę gracza 2 w górę
+    if (keyCode == UP) { 
+      player2Y -= 5; 
     }
-    if (keyCode == DOWN) { // jeżeli to strzałka w dół
-      player2Y += 5; // przesuń paletkę gracza 2 w dół
+    if (keyCode == DOWN) { 
+      player2Y += 5; 
     }
   }
   
@@ -47,32 +47,32 @@ void draw() {
 
 // odbijanie piłki od górnej i dolnej krawędzi okna
 if (ballY < 0 || ballY > height) {
-ballVelocityY *= -1; // zmiana kierunku ruchu piłki
+ballVelocityY *= -1; 
 }
 
 // sprawdzenie, czy piłka uderzyła w paletkę gracza 1
 if (ballX < 20 && ballX > 10 && ballY > player1Y && ballY < player1Y + 50) {
-ballVelocityX *= -1; // zmiana kierunku ruchu piłki
+ballVelocityX *= -1; 
 }
 
 // sprawdzenie, czy piłka uderzyła w paletkę gracza 2
 if (ballX > 480 && ballX < 490 && ballY > player2Y && ballY < player2Y + 50) {
-ballVelocityX *= -1; // zmiana kierunku ruchu piłki
+ballVelocityX *= -1; 
 }
 
 // sprawdzenie, czy piłka wypadła poza pole gry
 if (ballX < 0) {
-player2Score++; // dodaj punkt graczowi 2
-ballX = 250; // ustaw piłkę na środku pola gry
-ballY = 250; // ustaw piłkę na środku pola gry
-ballVelocityX = 3; // ustaw prędkość piłki
-ballVelocityY = 3; // ustaw prędkość piłki
+player2Score++; 
+ballX = 250; 
+ballY = 250; 
+ballVelocityX = 3; 
+ballVelocityY = 3; 
 }
 if (ballX > width) {
-player1Score++; // dodaj punkt graczowi 1
-ballX = 250; // ustaw piłkę na środku pola gry
-ballY = 250; // ustaw piłkę na środku pola gry
-ballVelocityX = -3; // ustaw prędkość piłki
-ballVelocityY = -3; // ustaw prędkość piłki
+player1Score++; 
+ballX = 250;
+ballY = 250; 
+ballVelocityX = -3; 
+ballVelocityY = -3;
 }
 }
